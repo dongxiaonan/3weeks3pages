@@ -1,58 +1,135 @@
 @import "compass/reset";
 @import "compass/css3";
-$highlight-text-color: white-smoke;
+$highlight-text-color: white;
+$green-middle: #66dcac;
+$grey-middle: lightgrey;
+$grey-dark: #939598;
+$bg-color: #efefef;
+$text-color: #4f4f4f;
+$secondy-text-color: #D9DADA;
 body {
     font-size: 62.5%;
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .hero {
     background: url('/images/hero.jpg');
     background-size: cover;
     color: $highlight-text-color;
-}
-
-header {
-    img {
-        width: 8em;
-        height: 2em;
-        float: left;
-    }
-    ul {
-        float: right;
-        li {
+    header {
+        padding: 1em 3em;
+        img {
+            width: 6em;
+            height: 2em;
             float: left;
-            margin: 0 .5em;
+        }
+        ul {
+            float: right;
+            li {
+                float: left;
+                color: $secondy-text-color;
+                padding: 0.5em 1em;
+                border: 1px solid transparent;
+                border-radius: 2px;
+                &:last-child {
+                    border: 1px solid $highlight-text-color;
+                }
+                ;
+            }
+        }
+        /*@include clearfix;*/
+    }
+    h1 {
+        font-size: 3em;
+        padding: 1em 0 .5em 0;
+    }
+    h2 {
+        font-size: 1em;
+        color: $secondy-text-color;
+    }
+    form {
+        padding: 2em 0 4em 0;
+        input[type="text"] {
+            margin-right: -0.2em;
+            border-radius: 2px 0 0 2px;
+            border: 0;
             padding: 1em;
+            width: 18em;
+            background-color: $grey-middle;
+            opacity: .7;
+        }
+        input[type="button"] {
+            text-transform: uppercase;
+            border-radius: 0 2px 2px 0;
+            border: 0;
+            padding: 1em;
+            width: 6em;
+            background-color: $green-middle;
         }
     }
-    /*@include clearfix;*/
 }
 
-h1 {
-    font-size: 4em;
-    padding: 1em 0 .5em 0;
-}
-
-h2 {
-    font-size: 2em;
-}
-
-form {
-    padding: 2em 0 4em 0;
-    input[type="text"] {
-        border-radius: 2px 0 0 2px;
-        border: 0;
-    	padding: 1em;
-        width: 18em;
-        background-color: light-grey;
-        opacity: .7;
+.numbers {
+    width: 80%;
+    margin: 0 auto;
+    .number {
+        position: relative;
+        top: -3em;
+        float: left;
+        background-color: $bg-color;
+        width: 24%;
+        border-top: 1px solid $secondy-text-color;
+        border-bottom: 1px solid $secondy-text-color;
+        border-left: 1px solid $secondy-text-color;
+        &:last-child {
+            border-right: 1px solid $secondy-text-color;
+        }
+        h2 {
+            font-size: 2em;
+            padding: 1em 0;
+        }
+        h3 {
+            padding: 0 0 2em 0;
+        }
     }
-    input[type="button"] {
-    	border-radius: 0 2px 2px 0;
-    	border: 0;
-    	padding: 1em;
-    	width: 6em;
-    	background-color: green;
+}
+
+.how-it-works {
+    margin-top: 9.5em;
+    h2 {
+        text-transform: uppercase;
+        margin-bottom: 1em;
+        &:after {}
+        ;
+    }
+    ul {
+        width: 80%;
+        margin: 0 auto;
+        li {
+            width: 30%;
+            display: inline-block;
+            padding: .1em;
+            span {
+                font-size: 2em;
+                color: $grey-middle;
+                border: 1px solid $grey-middle;
+                width: 1em;
+                height: 1em;
+                display: block;
+                margin: 1em auto 2em auto;
+                padding: .4em;
+                background-color: $bg-color;
+                border-radius: 100%;
+            }
+            i {
+            	font-family: "Awesome";
+            }
+            p {}
+            h3 {
+            	font-weight: bold;
+            }
+        }
+
     }
 }
